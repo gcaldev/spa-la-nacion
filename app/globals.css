@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #006ffd;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.menu-container{
+  display: flex;
+  gap: 16px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background: var(--background);
+  opacity: 0.8;
+  color: var(--foreground);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+
+@media (max-width: 1024px) {
+  .discounts-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .navbar .hide{
+    display: none;
+  }
+  .navbar-container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    gap: 16px;
+  }
+
+  .search-inputs input {
+    border-radius: 8px !important;
+    padding: 8px !important;
+  }
+
+  .benefits-container > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .discounts-container > div:first-child {
+    display: flex;
+    flex-direction: column !important;
+    gap: 16px;
+    text-align: center;
+  }
+
+
+  .discounts-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.search-bar input:nth-of-type(1) {
+  border-radius: 20px 0 0 20px;
+  padding: 4px;
+  padding-left: 16px;
+}
+
+.search-bar input:nth-of-type(2) {
+  border-radius: 0 20px 20px 0;
+  padding: 4px;
+  padding-left: 8px;
+}
+
+.search-bar button {
+  padding: 4px;
+  border-radius: 20px;
+  background: var(--primary);
+  color: var(--background);
+}
+
+.banner-carrousel {
+  height: 65vh;
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.benefits {
+  background-color: #fdfdfd;
+  flex: 1;
+}
+
+
+.discounts {
+  background-color: #f6f7f2;
+  border: none;
+  flex: 1;
+}
+
+.discounts-container > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h2 {
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.discounts-container, .benefits-container {
+  margin: 0 auto;
+}
+
+.discounts-container, .benefits-container {
+  padding: 32px;
+  max-width: 1200px;
+}
+
+.primary-btn {
+  border: 2px solid var(--primary);
+  padding: 16px 24px;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.secondary-btn {
+  border: 2px solid #fdfdfd;
+  padding: 16px 24px;
+  color: #fdfdfd;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #fdfdfd;
+  color: var(--primary);
+}
+
+.discounts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+}
+
+.discounts-container > div:first-child {
+  padding-bottom: 32px;
+}
+
+button {
+  font-weight: bold;
+}
+
+.discount-footer-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 8px;
+}
+.dropdown{
+  display: flex;
+  gap: 16px;
+}
+
+.discounts-grid-item {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  border-radius: 16px 16px 0 0;
+  position: relative;
+  height: 200px;
+}
+
+.card-footer {
+  display: flex;
+  padding: 24px 16px 16px 16px;
+  gap: 8px;
+  flex: 1;
+  background: #fdfdfd;
+}
+
+.client-type-benefit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.client-type-benefit p {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.benefit-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+}
+
+.discount-footer-name {
+  color: #fdfdfd;
+  font-weight: bold;
+}
+
+.benefit-distance{
+  font-size: 12px;
+}
+
+.benefit-name{
+  font-size: 16px;
+  font-weight: bold;
+}
